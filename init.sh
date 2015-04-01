@@ -13,7 +13,7 @@ if [ -e $redis_worker_base ]; then
 fi
 for temp in $redis_base/tmp;
 do
-	mv -f $temp $redis_worker_base
+	mv -f $temp/* $redis_worker_base
 done
 rm -fr $redis_base/tmp
 
