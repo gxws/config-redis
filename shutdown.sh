@@ -1,1 +1,1 @@
-kill  `ps -aux | grep redis | awk '{print $2}'`
+kill -9 `ps -aux | grep redis | awk '{print $2}'`
