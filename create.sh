@@ -6,6 +6,9 @@ redis_config_base=$(cd `dirname $0`; pwd)
 
 echo "安装ruby"
 yum install ruby tcl
+gem sources --remove https://rubygems.org/
+gem sources -a http://ruby.taobao.org/
+gem sources -l
 gem install redis
 
 for ((i=0;i<${redis_node_count};i++)); do
