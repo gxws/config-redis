@@ -24,7 +24,9 @@ cd -
 
 rm -rf $redis_base/${redis_port}*
 
+echo "配置reids集群实例"
 for ((i=0;i<${redis_node_count};i++)); do
+	echo "redis实例"$i
     node_port=${redis_port}${i}
     node_dir=$redis_base/${node_port}
     if [ ! -e ${node_dir} ]; then
