@@ -4,6 +4,10 @@ echo "创建redis集群..."
 redis_config_base=$(cd `dirname $0`; pwd)
 . $redis_config_base/redis-cluster.conf
 
+echo "安装ruby"
+yum install ruby tcl
+gem install redis
+
 for ((i=0;i<${redis_node_count};i++)); do
     node_port=${redis_port}${i}
     for ((j=0;j<${#redis_cluster_hosts[*]};j++)); do
