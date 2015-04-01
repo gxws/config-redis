@@ -11,9 +11,11 @@ gem sources -a http://ruby.taobao.org/
 gem sources -l
 gem install redis
 
-for ((i=0;i<${redis_node_count};i++)); do
+for ((i=0;i<${redis_node_count};i++))
+do
     node_port=${redis_port}${i}
-    for ((j=0;j<${#redis_cluster_hosts[*]};j++)); do
+    for ((j=0;j<${#redis_hosts[*]};j++))
+    do
         redis_cluster_list=${redis_cluster_list}${redis_hosts[j]}":"${node_port}" "
     done
 done
