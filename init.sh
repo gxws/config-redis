@@ -36,11 +36,4 @@ for ((i=0;i<${redis_node_count};i++)); do
     sed -i -e '1i include '"${redis_worker_base}"'/redis.conf\nport '"${node_port}"'\npidfile '"${node_dir}"'/redis.pid\ndir '"${node_dir}"'' ${node_dir}/redis-node.conf
 done
 
-echo "验证redis worker用户"
-worker_user=`cat /etc/passwd | grep $redis_worker_user`
-if [ -z $worker_user ];
-then
-	useradd $redis_worker_user
-fi
-
 chown -R $redis_worker_user:$redis_worker_user $redis_base
