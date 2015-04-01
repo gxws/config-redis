@@ -23,7 +23,7 @@ cd $redis_worker_base
 make && make install
 cd -
 
-rm -rf $redis_base/${redis_port}*
+#rm -rf $redis_base/${redis_port}*
 
 echo "配置reids集群实例"
 for ((i=0;i<${redis_node_count};i++)); do
@@ -33,7 +33,7 @@ for ((i=0;i<${redis_node_count};i++)); do
     if [ ! -e ${node_dir} ]; then
         mkdir ${node_dir}
     fi
-    cp $redis_config_base/redis-node.conf ${node_dir}
+    cp -f $redis_config_base/redis-node.conf ${node_dir}
     sed -i -e '1i include '"${redis_worker_base}"'/redis.conf\nport '"${node_port}"'\npidfile '"${node_dir}"'/redis.pid\ndir '"${node_dir}"'' $node_dir/redis-node.conf
 done
 
