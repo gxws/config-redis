@@ -14,5 +14,5 @@ for ((i=0;i<${redis_node_count};i++)); do
         redis_cluster_list=${redis_cluster_list}${redis_cluster_hosts[j]}":"${node_port}" "
     done
 done
-
-$redis_worker_base/src/redis-trib.rb create --replicas 1 ${redis_cluster_list}
+echo "创建："$redis_cluster_list
+$redis_worker_base/src/redis-trib.rb create --replicas 1 $redis_cluster_list
