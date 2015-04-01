@@ -34,7 +34,7 @@ for ((i=0;i<${redis_node_count};i++)); do
         mkdir ${node_dir}
     fi
     cp $redis_config_base/redis-node.conf ${node_dir}
-    sed -i -e '1i include '"${redis_worker_base}"'/redis.conf\nport '"${node_port}"'\npidfile '"${node_dir}"'/redis.pid\ndir '"${node_dir}"'' ${node_dir}/redis-node.conf
+    sed -i -e '1i include '"${redis_worker_base}"'/redis.conf\nport '"${node_port}"'\npidfile '"${node_dir}"'/redis.pid\ndir '"${node_dir}"'' $node_dir/redis-node.conf
 done
 
 chown -R $redis_worker_user:$redis_worker_user $redis_base

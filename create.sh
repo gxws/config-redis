@@ -11,7 +11,7 @@ gem install redis
 for ((i=0;i<${redis_node_count};i++)); do
     node_port=${redis_port}${i}
     for ((j=0;j<${#redis_cluster_hosts[*]};j++)); do
-        redis_cluster_list=${redis_cluster_list}${redis_cluster_hosts[j]}":"${node_port}" "
+        redis_cluster_list=${redis_cluster_list}${redis_hosts[j]}":"${node_port}" "
     done
 done
 echo "创建："$redis_cluster_list
