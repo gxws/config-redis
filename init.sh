@@ -4,6 +4,8 @@ echo "配置redis"
 redis_config_base=$(cd `dirname $0`; pwd)
 . $redis_config_base/redis-cluster.conf
 
+yum install gcc
+
 echo "下载redis"
 wget -P $redis_base http://software.gxwsxx.com:18000/software/redis.tar.gz
 mkdir $redis_base/tmp

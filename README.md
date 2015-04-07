@@ -6,6 +6,7 @@ config-redis
 1、创建linux用户redis
 ---
 	useradd redis
+	chmod 777 /home/redis
 2、从git下载配置
 ---
 	cd /home/redis
