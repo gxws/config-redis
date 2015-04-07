@@ -14,11 +14,13 @@ config-redis
 3、运行初始化配置
 ---
 	chmod a+x *
-	./init.sh
+	sudo ./init.sh
 4、启动
 ---
-	./startup.sh
-	
+	sudo ./startup.sh
+5、关闭
+---
+	sudo ./shutdown.sh
 	
 文件说明
 ---
