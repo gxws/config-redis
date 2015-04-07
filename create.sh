@@ -5,7 +5,7 @@ redis_config_base=$(cd `dirname $0`; pwd)
 . $redis_config_base/redis-cluster.conf
 
 echo "安装ruby"
-yum install ruby tcl
+yum -y install ruby tcl
 gem sources --remove https://rubygems.org/
 gem sources -a http://ruby.taobao.org/
 gem sources -l
@@ -20,4 +20,4 @@ do
     done
 done
 echo "创建："$redis_cluster_list
-$redis_worker_base/src/redis-trib.rb create --replicas 1 $redis_cluster_list
+$redis_worker_base/src/redis-trib.rb create --replicas 2 $redis_cluster_list
