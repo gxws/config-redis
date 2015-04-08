@@ -7,7 +7,7 @@ redis_config_base=$(cd `dirname $0`; pwd)
 yum -y install gcc
 
 echo "下载redis"
-wget -P $redis_base http://software.gxwsxx.com:18000/software/redis.tar.gz
+wget -P $redis_base http://software.gxwsxx.com/software/redis.tar.gz
 mkdir $redis_base/tmp
 tar -zxf $redis_base/redis.tar.gz -C $redis_base/tmp
 rm -r $redis_base/redis.tar.gz
