@@ -9,7 +9,7 @@ config-redis
 [redis文档地址](http://redis.io/)
 
 ###2、服务器结构
-由3台服务器组成的集群，每台服务器运行3个redis实例。<br />
+由2台服务器组成的集群，每台服务器运行4个redis实例。<br />
 
 ###3、目录结构
 集群根目录在/home/redis，需要创建redis用户，以该用户运行实例。<br />
@@ -20,7 +20,7 @@ redis集群使用多master多slave方式部署，根据key的hash值确定存储
 每个master实例有2个slave，集群支持master自动failover。
 
 ###5、访问
-使用DNS服务配置redis域名0.redis.gxwsxx.com,1.redis.gxwsxx.com,2.redis.gxwsxx.com。
+使用DNS服务配置redis域名0.redis.gxwsxx.com,1.redis.gxwsxx.com。
 
 二、部署教程
 ---
