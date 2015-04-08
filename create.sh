@@ -20,4 +20,4 @@ do
     done
 done
 echo "创建："$redis_cluster_list
-$redis_worker_base/src/redis-trib.rb create --replicas 2 $redis_cluster_list
+$redis_worker_base/src/redis-trib.rb create --replicas 1 $redis_cluster_list
