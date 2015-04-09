@@ -41,4 +41,3 @@ redis集群使用多master多slave方式部署，根据key的hash值确定存储
 	sudo ./shutdown.sh
 ###6、创建集群
 	sudo ./create.sh
-	
