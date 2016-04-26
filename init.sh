@@ -7,7 +7,7 @@ cp -f $redis_config_base/redis.$1.conf $redis_config_base/redis.conf
 
 yum -y install gcc
 
-if [ ! -e $redis_worker_base ]
+if [ ! -e $redis_worker_base ];then
     echo "下载redis"
     wget -P $redis_base http://download.redis.io/releases/redis-stable.tar.gz
 fi
