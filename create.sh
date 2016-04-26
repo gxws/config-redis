@@ -2,7 +2,7 @@
 
 echo "创建redis集群..."
 redis_config_base=$(cd `dirname $0`; pwd)
-. $redis_config_base/redis-cluster.conf
+. $redis_config_base/redis.conf
 
 echo "安装ruby"
 yum -y install ruby tcl

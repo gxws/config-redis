@@ -2,12 +2,13 @@
 
 echo "配置redis"
 redis_config_base=$(cd `dirname $0`; pwd)
-. $redis_config_base/redis-cluster.conf
+cp -f $redis_config_base/redis.$1.conf $redis_config_base/redis.conf
+. $redis_config_base/redis.conf
 
 yum -y install gcc
 
 echo "下载redis"
-wget -P $redis_base http://software.gxwsxx.com/software/redis.tar.gz
+wget -P $redis_base http://download.redis.io/releases/redis-3.0.7.tar.gz
 mkdir $redis_base/tmp
 tar -zxf $redis_base/redis.tar.gz -C $redis_base/tmp
 rm -r $redis_base/redis.tar.gz
@@ -24,8 +25,6 @@ echo "编译安装redis"
 cd $redis_worker_base
 make && make install
 cd -
-
-#rm -rf $redis_base/${redis_port}*
 
 echo "配置reids集群实例"
 for ((i=0;i<${redis_node_count};i++)); do
