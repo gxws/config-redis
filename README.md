@@ -34,7 +34,7 @@ redis集群使用多master多slave方式部署，根据key的hash值确定存储
 	git checkout origin/相应的分支
 ###3、运行初始化配置
 	chmod a+x *
-	sudo ./init.sh
+	sudo ./init.sh "yj或gs"
 ###4、启动
 	sudo ./startup.sh
 ###5、关闭
